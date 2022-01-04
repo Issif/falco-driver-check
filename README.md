@@ -1,6 +1,6 @@
 # falco-driver-check
 
-This script will check if falco ebpf probe and kernel module are present on your system. If one is available, you will be notified and can start to secure your insfrastructure.
+This script will check if falco ebpf probe and kernel module are present for your system. If one is available, you will be notified and can start to secure your insfrastructure.
 
 If none is available, the script will provide you details on how to contribute for the sake of community, you have all intels for submitting a 
 PR for allowing Falco test-infra platform to build the driver you need.
