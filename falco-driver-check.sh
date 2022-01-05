@@ -1,4 +1,4 @@
-cker #!/usr/bin/env bash
+#!/usr/bin/env bash
 # set -xe
 
 DRIVERS_REPO="https://download.falco.org/driver"
