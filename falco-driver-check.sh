@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+cker #!/usr/bin/env bash
 # set -xe
 
 DRIVERS_REPO="https://download.falco.org/driver"
@@ -97,14 +97,12 @@ print_usage() {
 	echo ""
 }
 
-while test $# -gt 0; do
-	case "$1" in
-		-h|--help)
-			print_usage
-			exit 0
-			;;
-	esac
-done
+case "$1" in
+	-h|--help)
+		print_usage
+		exit 0
+		;;
+esac
 
 get_target_id
 
