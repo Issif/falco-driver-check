@@ -69,3 +69,21 @@ Congratulations! Your system is ready for running Falco!
 • Meet the maintainers on the Falco Slack (https://kubernetes.slack.com#falco)
 • Follow @falco_org on Twitter
 ```
+
+## Docker
+
+You can run this script in `Docker` with:
+```shell
+docker run -ti -v /etc/os-release:/etc/os-release -v /etc/debian_version:/etc/debian_version -v /etc/centos-release:/etc/centos-release -v /etc/VERSION:/etc/VERSION issif/falco-driver-check
+```
+
+## Kubernetes
+
+It might be really useful to test your kubernetes nodes, following the procedure:
+```shell
+kubectl apply -f Job.yaml -n default 
+kubectl logs job/falco-driver-check -n default 
+kubectl delete job falco-driver-check -n default 
+```
+
+
