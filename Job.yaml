@@ -1,0 +1,24 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: falco-driver-check
+  labels:
+    purpose: falco-driver-check
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+      - image: issif/falco-driver-check
+        name: falco-driver-check
+        imagePullPolicy: Always
+        env:
+        - name: HOST_ROOT
+          value: "/host"
+        volumeMounts:
+        - mountPath: /host/etc
+          name: host-etc
+      volumes:
+      - name: host-etc
+        hostPath:
+          path: /etc
