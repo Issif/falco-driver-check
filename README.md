@@ -79,7 +79,7 @@ docker run -ti -v /etc/os-release:/etc/os-release -v /etc/debian_version:/etc/de
 
 ## Kubernetes
 
-It might be really useful to test your kubernetes nodes, following the procedure:
+You can driver check your kubernetes nodes following this procedure:
 ```shell
 kubectl apply -f Job.yaml -n default 
 kubectl logs job/falco-driver-check -n default 
