@@ -23,7 +23,7 @@ get_target_id() {
 	elif [ -f "${HOST_ROOT}/etc/VERSION" ]; then
 		OS_ID=minikube
 	else
-		>&2 echo "Detected an unsupported target system, please get in touch with the Falco community"
+		echo "Detected an unsupported target system, please get in touch with the Falco community"
 		exit 1
 	fi
 
@@ -84,6 +84,27 @@ fi
 get_falco_libs_sha() {
 	FALCO_LIBS_VERSION="$(curl -s  https://raw.githubusercontent.com/falcosecurity/falco/${FALCO_VERSION}/cmake/modules/falcosecurity-libs.cmake | grep 'set(FALCOSECURITY_LIBS_VERSION' | cut -f2 -d'"')"
 }
+
+print_usage() {
+	echo "Usage:"
+	echo "  falco-driver-check [version]"
+	echo ""
+	echo "Arguments:"
+	echo "  version       version of Falco to check"
+	echo "                (if empty, last version is checked)"
+	echo "Options:"
+	echo "  --help         show brief help"
+	echo ""
+}
+
+while test $# -gt 0; do
+	case "$1" in
+		-h|--help)
+			print_usage
+			exit 0
+			;;
+	esac
+done
 
 get_target_id
 
