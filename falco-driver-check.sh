@@ -157,5 +157,5 @@ echo "  module: output/${FALCO_LIBS_VERSION}/${DRIVER_NAME}_${TARGET_ID}_${KERNE
 echo "  probe: output/${FALCO_LIBS_VERSION}/${PROBE_NAME}_${TARGET_ID}_${KERNEL_RELEASE}_${KERNEL_VERSION}.o"
 echo '```'
 echo ""
-echo "You can also run './generate-driverkit-config.sh ${FALCO_LIBS_VERSION} ${KERNEL_RELEASE} ${KERNEL_VERSION} ${TARGET_ID}'"
-echo "To get the config file in the right folder."
+echo "You can also run 'make generate -e TARGET_DISTRO=${TARGET_ID} -e TARGET_KERNEL=${KERNEL_RELEASE}_${KERNEL_VERSION}'"
+echo "from https://github.com/falcosecurity/test-infra/driverkit, see documentation: https://github.com/falcosecuirty/test-infra/tree/master/driverkit#faq"
